@@ -1,50 +1,24 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const newsSources = [
-        { name: 'CoinDesk', url: 'https://www.coindesk.com' },
-        { name: 'CoinTelegraph', url: 'https://www.cointelegraph.com' },
-        { name: 'CryptoSlate', url: 'https://www.cryptoslate.com' },
-        { name: 'CryptoNews', url: 'https://www.cryptonews.com' },
-        { name: 'The Block', url: 'https://www.theblockcrypto.com' },
-        { name: 'Decrypt', url: 'https://www.decrypt.co' },
-        { name: 'NewsBTC', url: 'https://www.newsbtc.com' },
-        { name: 'Cardano Feed', url: 'https://www.cardanofeed.com' },
-        { name: 'ADApulse', url: 'https://adapulse.io' },
-        { name: 'Glassnode Insights', url: 'https://insights.glassnode.com' }
+        { name: 'CoinDesk', url: 'https://www.coindesk.com', font: 'Open Sans' },
+        { name: 'CoinTelegraph', url: 'https://www.cointelegraph.com', font: 'Roboto' },
+        { name: 'CryptoSlate', url: 'https://www.cryptoslate.com', font: 'Lato' },
+        { name: 'CryptoNews', url: 'https://www.cryptonews.com', font: 'Montserrat' },
+        { name: 'The Block', url: 'https://www.theblockcrypto.com', font: 'Open Sans' },
+        { name: 'Decrypt', url: 'https://www.decrypt.co', font: 'Roboto' },
+        { name: 'NewsBTC', url: 'https://www.newsbtc.com', font: 'Lato' },
+        { name: 'Cardano Feed', url: 'https://www.cardanofeed.com', font: 'Montserrat' },
+        { name: 'ADAPulse', url: 'https://adapulse.io', font: 'Open Sans' },
+        { name: 'Glassnode Insights', url: 'https://insights.glassnode.com', font: 'Roboto' }
     ];
 
-    const newsRow = document.getElementById('news-row');
+    const newsListElement = document.getElementById('news-list');
 
     newsSources.forEach(source => {
-        const newsItem = document.createElement('div');
-        newsItem.className = 'news-item';
-        
-        // For demonstration purposes, we just display the source name.
-        // In a real-world scenario, you'd fetch the latest news from each source's RSS feed or API.
-        newsItem.innerHTML = `
-            <h3>${source.name}</h3>
-            <p>Latest story from ${source.name} will be displayed here.</p>
-            <a href="${source.url}" target="_blank">Visit ${source.name}</a>
-        `;
-        
-        newsRow.appendChild(newsItem);
+        const sourceElement = document.createElement('div');
+        sourceElement.className = 'news-source';
+        sourceElement.style.fontFamily = source.font + ', sans-serif';
+        sourceElement.innerHTML = `<a href="${source.url}" target="_blank">${source.name}</a>`;
+        newsListElement.appendChild(sourceElement);
     });
-
-    // Fetch and display live stock values in the ticker
-    const tickerInner = document.getElementById('ticker-inner');
-
-    const fetchStockValues = async () => {
-        try {
-            const response = await fetch('https://api.example.com/stock-values'); // Replace with actual API URL
-            const data = await response.json();
-            data.forEach(stock => {
-                const stockItem = document.createElement('span');
-                stockItem.textContent = `${stock.name}: ${stock.value} `;
-                tickerInner.appendChild(stockItem);
-            });
-        } catch (error) {
-            console.error('Error fetching stock values:', error);
-        }
-    };
-
-    fetchStockValues();
 });
