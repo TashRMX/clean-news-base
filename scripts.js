@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Script Loaded'); // Check if script is running
+
     const newsSources = [
         { name: 'CoinDesk', url: 'https://www.coindesk.com', font: 'Open Sans' },
         { name: 'CoinTelegraph', url: 'https://www.cointelegraph.com', font: 'Roboto' },
@@ -14,11 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const newsListElement = document.getElementById('news-list');
 
-    newsSources.forEach(source => {
-        const sourceElement = document.createElement('div');
-        sourceElement.className = 'news-source';
-        sourceElement.style.fontFamily = source.font + ', sans-serif';
-        sourceElement.innerHTML = `<a href="${source.url}" target="_blank">${source.name}</a>`;
-        newsListElement.appendChild(sourceElement);
-    });
+    if (newsListElement) {
+        newsSources.forEach(source => {
+            const sourceElement = document.createElement('div');
+            sourceElement.className = 'news-source';
+            sourceElement.style.fontFamily = `${source.font}, sans-serif`;
+            sourceElement.innerHTML = `<a href="${source.url}" target="_blank">${source.name}</a>`;
+            newsListElement.appendChild(sourceElement);
+        });
+    } else {
+        console.error('Element with ID "news-list" not found');
+    }
 });
