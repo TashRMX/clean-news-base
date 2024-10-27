@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const newsSources = [
+    console.log("Script is running");
         { name: 'CoinDesk', url: 'https://www.coindesk.com', font: 'Open Sans' },
         { name: 'CoinTelegraph', url: 'https://www.cointelegraph.com', font: 'Roboto' },
         { name: 'CryptoSlate', url: 'https://www.cryptoslate.com', font: 'Lato' },
