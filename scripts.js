@@ -11,16 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // News Sources
     const newsSources = [
-        { name: "CoinMarketCap", url: "https://coinmarketcap.com/", description: "Latest crypto market data" },
-        { name: "CoinGecko", url: "https://www.coingecko.com/", description: "Crypto prices and data insights" },
-        { name: "CoinDesk", url: "https://www.coindesk.com/", description: "Crypto news and analysis" },
-        { name: "CryptoSlate", url: "https://cryptoslate.com/", description: "Latest cryptocurrency news" },
-        { name: "BeInCrypto", url: "https://beincrypto.com/", description: "Crypto news and analysis" },
-        { name: "DeCrypt", url: "https://decrypt.co/", description: "Crypto news and insights" },
-        { name: "Bitcoin Magazine", url: "https://bitcoinmagazine.com/", description: "Bitcoin and crypto news" },
-        { name: "The Block", url: "https://www.theblock.co/", description: "Blockchain and crypto news" },
-        { name: "CoinTelegraph", url: "https://cointelegraph.com/", description: "Cryptocurrency news and analysis" },
-        { name: "AdaPulse", url: "https://adapulse.com/", description: "News on Cardano and its ecosystem" },
+        { name: 'CoinDesk', url: 'https://www.coindesk.com/', description: "Crypto news and analysis", font: 'Open Sans' },
+        { name: 'CoinTelegraph', url: 'https://www.cointelegraph.com/', description: "Crypto news and analysis", font: 'Roboto' },
+        { name: 'CryptoSlate', url: 'https://www.cryptoslate.com/', description: "Latest cryptocurrency  news", font: 'Lato' },
+        { name: 'CryptoNews', url: 'https://www.cryptonews.com/', font: 'Montserrat' },
+        { name: 'The Block', url: 'https://www.theblockcrypto.com/', description: "Blockchain and crypto news", font: 'Open Sans' },
+        { name: 'Decrypt', url: 'https://www.decrypt.co/', description: "Crypto news and insight", font: 'Roboto' },
+        { name: 'NewsBTC', url: 'https://www.newsbtc.com/', font: 'Lato' },
+        { name: 'Cardano Feed', url: 'https://www.cardanofeed.com/', font: 'Montserrat' },
+        { name: 'ADAPulse', url: 'https://adapulse.io/', font: 'Open Sans' },
+        { name: 'Glassnode Insights', url: 'https://insights.glassnode.com/', font: 'Roboto' }
     ];
 
     // Populate Recent News
