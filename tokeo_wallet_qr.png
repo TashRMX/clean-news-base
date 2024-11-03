@@ -1,0 +1,14 @@
+# Navigate to your project directory
+cd path/to/your/project
+
+# Move the image into your project (assuming you have an 'images' folder)
+mv /path/to/tokeo_wallet_qr.png images/
+
+# Add the image to Git
+git add images/tokeo_wallet_qr.png
+
+# Commit the image with a message
+git commit -m "Add QR code for Tokeo wallet"
+
+# Push to GitHub
+git push origin main  # or replace 'main' with your branch name
