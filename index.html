@@ -3,38 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLEAN NEWS BASE</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Clean News -hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1 class="site-title">CLEAN NEWS-base</h1>
-        </header>
+    <!-- Toggle for Light/Dark Mode -->
+    <button id="theme-toggle">
+        <span id="theme-icon">🌙</span>
+    </button>
 
-        <div class="news-sources">
-            <h2>News Sources</h2>
-            <div id="news-list">
-                <!-- News sources will be dynamically loaded here -->
-            </div>
+    <header>
+        <h1 class="logo">Clean News -hub</h1>
+        <!-- Search Bar -->
+        <input type="text" id="search-bar" placeholder="Search news...">
+    </header>
+
+    <!-- Recent News Section -->
+    <section id="news-container">
+        <h2 class="centered-header">Recent News</h2>
+        <div class="news-grid">
+            <!-- News items will be populated here by JavaScript -->
         </div>
+    </section>
 
-        <div class="youtube-channel">
-            <h2>CryptoTrading KS</h2>
-            <a href="https://www.youtube.com/@CryptoTradingKS/videos" target="_blank">CryptoTrading KS YouTube Channel</a>
-        </div>
+    <!-- YouTube Link Section -->
+    <section id="youtube-section">
+        <h2>Watch Crypto Trading Videos</h2>
+        <a href="https://www.youtube.com/@CryptoTradingKS/videos" target="_blank">CryptoTrading KS</a>
+    </section>
 
-        <div class="bitcoin-index">
-            <h3>Bitcoin Index</h3>
-            <iframe src="https://widget.coinlib.io/widget?type=single_ticker&theme=dark&coin_id=859&pref_coin_id=1505" width="100%" height="300" frameborder="0"></iframe>
-        </div>
-
-        <footer>
-            <p class="coffee-text">Enjoying the content? Support us with a cryptocurrencie tippin' coffee :</p>
-            <a href="Tokeo" target="_blank">addr1qx4qkmkfsczhlhxz94kwv76wd248pndpcscgs2q4epy9pe0ygwpnzk832eyjf2w5tksk8sjp64t08vwh4zzaf5jwemescxpnuw</a>
-        </footer>
+    <!-- TradingView Bitcoin Chart -->
+    <div class="tradingview-widget-container">
+        <div id="tradingview-chart"></div>
     </div>
+
+    <!-- Tippin' Button -->
+    <div id="tippin-button" style="text-align: center; margin: 1rem 0;">
+        <a href="https://toekopay.io" target="_blank" class="button">Tippin'</a>
+    </div>
+
+    <!-- TradingView Script -->
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <script>
+        new TradingView.widget({
+            "container_id": "tradingview-chart",
+            "symbol": "BITSTAMP:BTCUSD",
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "dark",
+            "style": "1",
+            "locale": "en",
+            "toolbar_bg": "#222",
+            "enable_publishing": false,
+            "allow_symbol_change": true,
+            "hide_side_toolbar": false,
+            "details": true,
+            "hotlist": true,
+            "calendar": true,
+            "studies": ["MACD@tv-basicstudies"],
+        });
+    </script>
 </body>
 </html>
